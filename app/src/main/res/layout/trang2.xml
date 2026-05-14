@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F8F4">
+
+    <!-- HEADER -->
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#1FAA59"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📋 Lịch sử hoạt động"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Theo dõi thay đổi hệ thống bồn nước"
+            android:textColor="#DFF5E5"
+            android:textSize="15sp"
+            android:layout_marginTop="6dp"/>
+
+    </LinearLayout>
+
+    <!-- KHUNG DANH SÁCH -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardLogs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerLayout"
+        android:layout_above="@id/btnBack"
+        android:layout_margin="16dp"
+        android:elevation="6dp"
+        android:backgroundTint="#FFFFFF"
+        android:padding="8dp"
+        app:cardCornerRadius="20dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <ListView
+            android:id="@+id/listLogs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#E0E0E0"
+            android:dividerHeight="1dp"
+            android:padding="10dp"
+            android:scrollbars="none"
+            android:background="#FFFFFF"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- NÚT QUAY LẠI -->
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#1FAA59"
+        android:text="← Quay lại Trang Chủ"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

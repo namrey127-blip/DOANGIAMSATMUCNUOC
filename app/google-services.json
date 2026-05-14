@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "907257074234",
+    "firebase_url": "https://mohamed-salah-6a04e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mohamed-salah-6a04e",
+    "storage_bucket": "mohamed-salah-6a04e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907257074234:android:487b12d2c15c2bd27bdb03",
+        "android_client_info": {
+          "package_name": "com.example.doangiamsatmucwater"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907257074234-cem1oc711ire1rr7k4isn9l7111ljpaa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6JfkUut53q0iRJ6hhoRbNcljAeyCTZsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907257074234-cem1oc711ire1rr7k4isn9l7111ljpaa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

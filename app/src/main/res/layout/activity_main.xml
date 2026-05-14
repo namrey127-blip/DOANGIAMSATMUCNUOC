@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F5F7">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNavigation"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="#00B14F" />
+
+            <RelativeLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xin chào, Kỹ sư 👨‍💻"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtName"
+                    android:text="Hệ thống bơm nước tự động"
+                    android:textColor="#E8F5E9"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@android:drawable/ic_popup_reminder"
+                    app:tint="#FFFFFF" />
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBanner"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@id/header"
+                android:layout_marginHorizontal="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#E8F5E9">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:padding="15dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="WATER TANK\nMANAGEMENT"
+                        android:textColor="#00B14F"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🌿"
+                        android:textSize="40sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/categoryLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardBanner"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="20dp"
+                android:weightSum="4">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="🛢️"
+                            android:textSize="24sp" />
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/txtMaxCap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="1000 L"
+                        android:textColor="#333"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="🌊"
+                            android:textSize="24sp" />
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/txtFlowRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="20 L/s"
+                        android:textColor="#333"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="⚡"
+                            android:textSize="24sp" />
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Điện áp"
+                        android:textColor="#333"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnAddTank"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="➕"
+                            android:textSize="24sp" />
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Thêm bồn"
+                        android:textColor="#333"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/titleMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/categoryLayout"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:text="Bồn nước nổi bật"
+                android:textColor="#333333"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleMain"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardTankMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="#00B14F"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="18dp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="20dp"
+                                android:gravity="center_vertical">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:paddingEnd="15dp">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+                                        <TextView
+                                            android:id="@+id/tagHot"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="#FFF3E0"
+                                            android:paddingHorizontal="8dp"
+                                            android:paddingVertical="4dp"
+                                            android:text="🔥 Hoạt động"
+                                            android:textColor="#E65100"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold" />
+                                        <TextView
+                                            android:id="@+id/txtPumpStatus"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:background="#E8F5E9"
+                                            android:paddingHorizontal="10dp"
+                                            android:paddingVertical="5dp"
+                                            android:text="BƠM: ĐANG CHẠY"
+                                            android:textColor="#00B14F"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+
+                                    <TextView
+                                        android:id="@+id/tankTitle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="15dp"
+                                        android:text="Thông số Bồn Chính"
+                                        android:textColor="#333333"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/txtVolume"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:text="0 L"
+                                        android:textColor="#00B14F"
+                                        android:textSize="32sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/txtDistance"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:drawablePadding="5dp"
+                                        android:text="Khoảng cách: 0 cm"
+                                        android:textColor="#757575"
+                                        android:textSize="14sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:orientation="horizontal">
+                                        <Button
+                                            android:id="@+id/btnPump1"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1.2"
+                                            android:layout_marginEnd="2dp"
+                                            android:backgroundTint="#00B14F"
+                                            android:text="BẬT"
+                                            android:textColor="#FFF"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold" />
+                                        <Button
+                                            android:id="@+id/btnStopPump1"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1.2"
+                                            android:layout_marginEnd="2dp"
+                                            android:backgroundTint="#FF9800"
+                                            android:text="TẮT"
+                                            android:textColor="#FFF"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold" />
+                                        <Button
+                                            android:id="@+id/btnDelete1"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="0.8"
+                                            android:backgroundTint="#E53935"
+                                            android:text="XÓA"
+                                            android:textColor="#FFF"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold" />
+                                        <Button
+                                            android:id="@+id/btnLogout"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Đăng xuất"/>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="80dp"
+                                    android:layout_height="120dp"
+                                    app:cardCornerRadius="15dp"
+                                    app:cardBackgroundColor="#F3F5F7"
+                                    app:cardElevation="0dp"
+                                    android:layout_gravity="center_vertical">
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/imgWaterWave"
+                                            android:layout_width="160dp"
+                                            android:layout_height="0dp"
+                                            android:layout_alignParentBottom="true"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/wave_bg" />
+
+                                        <TextView
+                                            android:id="@+id/txtPercentInsideBottle"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:gravity="center"
+                                            android:text="0%"
+                                            android:textColor="#333333"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+                                </androidx.cardview.widget.CardView>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardTank2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="#0077B6"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="5dp">
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="2dp">
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="18dp" app:cardElevation="0dp">
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="20dp" android:gravity="center_vertical">
+                                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:paddingEnd="15dp">
+                                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="#E3F2FD" android:paddingHorizontal="8dp" android:paddingVertical="4dp" android:text="💧 Bồn phụ" android:textColor="#0077B6" android:textSize="12sp" android:textStyle="bold" />
+                                        <TextView android:id="@+id/txtPumpStatus2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:background="#E8F5E9" android:paddingHorizontal="10dp" android:paddingVertical="5dp" android:text="BƠM: ĐANG CHẠY" android:textColor="#00B14F" android:textSize="12sp" android:textStyle="bold" />
+                                    </RelativeLayout>
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15dp" android:text="Bồn Số 2" android:textColor="#333333" android:textSize="18sp" android:textStyle="bold" />
+                                    <TextView android:id="@+id/txtVolume2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="0 L" android:textColor="#0077B6" android:textSize="32sp" android:textStyle="bold" />
+                                    <TextView android:id="@+id/txtDistance2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Khoảng cách: 0 cm" android:textColor="#757575" android:textSize="14sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:orientation="horizontal">
+                                        <Button
+                                            android:id="@+id/btnPump2"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1.2"
+                                            android:layout_marginEnd="2dp"
+                                            android:backgroundTint="#00B14F"
+                                            android:text="BẬT"
+                                            android:textColor="#FFF"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold" />
+                                        <Button
+                                            android:id="@+id/btnStopPump2"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1.2"
+                                            android:layout_marginEnd="2dp"
+                                            android:backgroundTint="#FF9800"
+                                            android:text="TẮT"
+                                            android:textColor="#FFF"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold" />
+                                        <Button
+                                            android:id="@+id/btnDelete2"
+                                            android:layout_width="0dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="0.8"
+                                            android:backgroundTint="#E53935"
+                                            android:text="XÓA"
+                                            android:textColor="#FFF"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <androidx.cardview.widget.CardView android:layout_width="80dp" android:layout_height="120dp" app:cardCornerRadius="15dp" app:cardBackgroundColor="#F3F5F7" app:cardElevation="0dp" android:layout_gravity="center_vertical">
+                                    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                                        <ImageView android:id="@+id/imgWaterWave2" android:layout_width="160dp" android:layout_height="0dp" android:layout_alignParentBottom="true" android:scaleType="fitXY" android:src="@drawable/wave_bg" app:tint="#0077B6"/>
+                                        <TextView android:id="@+id/txtPercentInsideBottle2" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="0%" android:textColor="#333333" android:textSize="16sp" android:textStyle="bold" />
+                                    </RelativeLayout>
+                                </androidx.cardview.widget.CardView>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:elevation="15dp"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/ic_launcher_background"
+                android:backgroundTint="#00B14F"
+                android:gravity="center"
+                android:text="🏠"
+                android:textColor="#FFF" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trang chủ"
+                android:textColor="#00B14F"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnPage2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💼" android:textSize="20sp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Thống kê" android:textColor="#757575" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnPage3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📖" android:textSize="20sp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cẩm nang" android:textColor="#757575" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnPage4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👤" android:textSize="20sp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tài khoản" android:textColor="#757575" android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
