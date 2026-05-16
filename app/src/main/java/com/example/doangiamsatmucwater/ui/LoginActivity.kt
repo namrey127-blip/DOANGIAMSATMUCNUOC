@@ -61,6 +61,30 @@ class LoginActivity : AppCompatActivity() {
             auth.signInWithEmailAndPassword(email, pass)
                 .addOnSuccessListener {
 
+                    val uid =
+                        auth.currentUser!!.uid
+
+                    val db =
+                        FirebaseDatabase.getInstance(
+                            "https://mohamed-salah-6a04e-default-rtdb.asia-southeast1.firebasedatabase.app/"
+                        )
+
+                    // =====================================
+                    // GHI UID ĐANG ĐIỀU KHIỂN
+                    // =====================================
+
+                    db.getReference("SMART_HOME/current_device_uid")
+                        .setValue(uid)
+
+                    // =====================================
+                    // OPTIONAL:
+                    // current_device cho user hiện tại
+                    // =====================================
+
+                    db.getReference(
+                        "SMART_HOME/users/$uid/current_device"
+                    ).setValue(true)
+
                     Toast.makeText(
                         this,
                         "Đăng nhập thành công",
@@ -135,6 +159,18 @@ class LoginActivity : AppCompatActivity() {
                             user.ref.child("current_device")
                                 .setValue(false)
                         }
+                        // =================================================
+// PROFILE
+// =================================================
+                        val profile = HashMap<String, Any>()
+
+                        profile["name"] = "Người dùng mới"
+                        profile["phone"] = ""
+                        profile["address"] = ""
+                        profile["email"] = email
+
+                        userRef.child("profile")
+                            .setValue(profile)
 
                         // =================================================
                         // BON 1
@@ -176,8 +212,12 @@ class LoginActivity : AppCompatActivity() {
                             .setValue(bon2)
 
                         // logs
+                        val logs = HashMap<String, Any>()
+
+                        logs["first_log"] = "Tạo tài khoản thành công"
+
                         userRef.child("logs")
-                            .setValue("empty")
+                            .setValue(logs)
 
                         // =================================================
                         // current_device
@@ -206,4 +246,4 @@ class LoginActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                 }
-}}}
+        }}}

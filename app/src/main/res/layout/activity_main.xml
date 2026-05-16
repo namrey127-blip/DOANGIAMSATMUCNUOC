@@ -351,6 +351,12 @@
                                             android:textSize="10sp"
                                             android:textStyle="bold" />
                                         <Button
+                                            android:id="@+id/btnChart1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="📈"
+                                            android:textSize="12sp" />
+                                        <Button
                                             android:id="@+id/btnDelete1"
                                             android:layout_width="0dp"
                                             android:layout_height="40dp"
@@ -386,7 +392,7 @@
                                             android:layout_height="0dp"
                                             android:layout_alignParentBottom="true"
                                             android:scaleType="fitXY"
-                                            android:src="@drawable/wave_bg" />
+                                            />
 
                                         <TextView
                                             android:id="@+id/txtPercentInsideBottle"
@@ -447,6 +453,12 @@
                                             android:textSize="10sp"
                                             android:textStyle="bold" />
                                         <Button
+                                            android:id="@+id/btnChart2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="📈"
+                                            android:textSize="12sp" />
+                                        <Button
                                             android:id="@+id/btnStopPump2"
                                             android:layout_width="0dp"
                                             android:layout_height="40dp"
@@ -472,7 +484,7 @@
                                 </LinearLayout>
                                 <androidx.cardview.widget.CardView android:layout_width="80dp" android:layout_height="120dp" app:cardCornerRadius="15dp" app:cardBackgroundColor="#F3F5F7" app:cardElevation="0dp" android:layout_gravity="center_vertical">
                                     <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
-                                        <ImageView android:id="@+id/imgWaterWave2" android:layout_width="160dp" android:layout_height="0dp" android:layout_alignParentBottom="true" android:scaleType="fitXY" android:src="@drawable/wave_bg" app:tint="#0077B6"/>
+                                        <ImageView android:id="@+id/imgWaterWave2" android:layout_width="160dp" android:layout_height="0dp" android:layout_alignParentBottom="true" android:scaleType="fitXY"  app:tint="#0077B6"/>
                                         <TextView android:id="@+id/txtPercentInsideBottle2" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="0%" android:textColor="#333333" android:textSize="16sp" android:textStyle="bold" />
                                     </RelativeLayout>
                                 </androidx.cardview.widget.CardView>

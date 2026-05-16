@@ -5,6 +5,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class trang2 : AppCompatActivity() {
@@ -35,17 +36,22 @@ class trang2 : AppCompatActivity() {
 
         listView.adapter = adapter
 
-        // ===== ĐỌC LOG FIREBASE =====
-        FirebaseDatabase.getInstance(
+        // ===== LẤY UID USER HIỆN TẠI =====
+        val uid =
+            FirebaseAuth.getInstance().currentUser?.uid ?: return
+
+        // ===== FIREBASE =====
+        val db = FirebaseDatabase.getInstance(
             "https://mohamed-salah-6a04e-default-rtdb.asia-southeast1.firebasedatabase.app/"
         )
-            .getReference("logs")
+
+        // ===== ĐỌC LOG FIREBASE =====
+        db.getReference("SMART_HOME/users/$uid/logs")
             .addValueEventListener(object : ValueEventListener {
 
                 override fun onDataChange(snapshot: DataSnapshot) {
 
                     list.clear()
-
                     for (s in snapshot.children) {
 
                         val text =
@@ -53,11 +59,20 @@ class trang2 : AppCompatActivity() {
 
                         if (text != null) {
 
-                            list.add(text)
+                            val currentTime =
+                                java.text.SimpleDateFormat(
+                                    "dd/MM/yyyy HH:mm:ss",
+                                    java.util.Locale.getDefault()
+                                ).format(java.util.Date())
+
+                            list.add(
+                                "[$currentTime]\n$text"
+                            )
                         }
                     }
 
-                    // log mới lên đầu
+
+                    // ===== LOG MỚI LÊN ĐẦU =====
                     list.reverse()
 
                     adapter.notifyDataSetChanged()

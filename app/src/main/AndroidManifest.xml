@@ -44,6 +44,8 @@
         <activity android:name=".trang3" />
         <activity android:name=".TankDetailActivity" />
         <activity android:name=".AddTankActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ChartActivity" />
 
     </application>
 

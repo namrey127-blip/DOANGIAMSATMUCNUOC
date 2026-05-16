@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class TankDetailActivity : AppCompatActivity() {
@@ -22,10 +23,11 @@ class TankDetailActivity : AppCompatActivity() {
 
         // BƯỚC 1: Nhận ID bồn từ trang chủ gửi sang
         tankId = intent.getStringExtra("TANK_ID") ?: "BON_1"
-
+        val uid =
+            FirebaseAuth.getInstance().currentUser!!.uid
         // BƯỚC 2: Trỏ thẳng vào node của bồn đó (BON_1 hoặc BON_2)
         db = FirebaseDatabase.getInstance("https://mohamed-salah-6a04e-default-rtdb.asia-southeast1.firebasedatabase.app/")
-            .getReference("SMART_HOME/users/user_1/tanks/$tankId")
+            .getReference("SMART_HOME/users/$uid/tanks/$tankId")
         val txtTitle = findViewById<TextView>(R.id.txtDetailTitle) // Nếu fen có TextView tiêu đề
         val txtDetailVolume = findViewById<TextView>(R.id.txtDetailVolume)
         val edtMaxCap = findViewById<EditText>(R.id.edtMaxCap)

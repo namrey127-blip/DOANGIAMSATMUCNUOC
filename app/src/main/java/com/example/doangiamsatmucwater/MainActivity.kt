@@ -157,9 +157,41 @@ class MainActivity : AppCompatActivity() {
         val btnPump2 = findViewById<Button>(R.id.btnPump2)
 
         val btnStopPump2 = findViewById<Button>(R.id.btnStopPump2)
+        val btnChart1 =
+            findViewById<Button>(R.id.btnChart1)
+
+        val btnChart2 =
+            findViewById<Button>(R.id.btnChart2)
 
         val btnDelete2 = findViewById<Button>(R.id.btnDelete2)
 
+        val btnPage4 =
+            findViewById<LinearLayout>(R.id.btnPage4)
+        btnPage4.setOnClickListener {
+
+            startActivity(
+                Intent(this, ProfileActivity::class.java)
+            )
+        }
+        btnChart1.setOnClickListener {
+
+            val i =
+                Intent(this, ChartActivity::class.java)
+
+            i.putExtra("tank", "BON_1")
+
+            startActivity(i)
+        }
+
+        btnChart2.setOnClickListener {
+
+            val i =
+                Intent(this, ChartActivity::class.java)
+
+            i.putExtra("tank", "BON_2")
+
+            startActivity(i)
+        }
         // ===== BỒN 1 =====
         btnPump1.setOnClickListener {
             database.child("BON_1").get().addOnSuccessListener { node ->
